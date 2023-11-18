@@ -23,7 +23,29 @@ namespace ProyectoTercerCorte
         public string ruta_Estudiante = "datosEstudiante.txt";
         public string ruta_Datos_Estudiantes_Notas = "NotasDatoStudent.txt";
 
-        private void btnRegistrarM_Click(object sender, EventArgs e)
+        public bool ValidarEstudianteNota() //Para saber si ya tiene calificación
+        {
+            identificacion = long.Parse(txtIdentificacion.Text);
+            if (File.Exists(ruta_Datos_Estudiantes_Notas))
+            {
+                Reader = new StreamReader(ruta_Datos_Estudiantes_Notas);
+                while (!Reader.EndOfStream)
+                {
+                    string[] tempo = Reader.ReadLine().Split(',');
+                    if (tempo[0] == identificacion.ToString())
+                    {
+                        Reader.Close();
+                        MessageBox.Show("El estudiante ya tiene notas registradas");
+                        txtIdentificacion.Text = "";
+                        return false;
+                    }
+                }
+                Reader.Close();
+            }
+            return true;
+        }
+
+        private void btnBuscarejo_Click(object sender, EventArgs e)
         {
             try
             {
