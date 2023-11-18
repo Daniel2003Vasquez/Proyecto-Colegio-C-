@@ -1,0 +1,6 @@
+Español,1217
+Sociales,1034
+Inglés,1235
+Matemáticas,1012
+Programación,1008
+Biología,1124

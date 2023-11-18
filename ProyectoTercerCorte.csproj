@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BB3DA91-5A74-40B6-9005-1BCB3DD89239}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProyectoTercerCorte</RootNamespace>
+    <AssemblyName>ProyectoTercerCorte</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormBoletin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoletin.Designer.cs">
+      <DependentUpon>FormBoletin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormComplementoVerNotasEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComplementoVerNotasEstudiante.Designer.cs">
+      <DependentUpon>FormComplementoVerNotasEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormComplementoRNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComplementoRNotas.Designer.cs">
+      <DependentUpon>FormComplementoRNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerNotasPorEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerNotasPorEstudiante.Designer.cs">
+      <DependentUpon>FormVerNotasPorEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPerfilAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfilAdmin.Designer.cs">
+      <DependentUpon>FormPerfilAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarEstudiante.Designer.cs">
+      <DependentUpon>FormRegistrarEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarMateria.Designer.cs">
+      <DependentUpon>FormRegistrarMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarNotas.Designer.cs">
+      <DependentUpon>FormRegistrarNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarUsuarioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarUsuarioAdmin.Designer.cs">
+      <DependentUpon>FormRegistrarUsuarioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBoletin.resx">
+      <DependentUpon>FormBoletin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComplementoVerNotasEstudiante.resx">
+      <DependentUpon>FormComplementoVerNotasEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComplementoRNotas.resx">
+      <DependentUpon>FormComplementoRNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerNotasPorEstudiante.resx">
+      <DependentUpon>FormVerNotasPorEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfilAdmin.resx">
+      <DependentUpon>FormPerfilAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarEstudiante.resx">
+      <DependentUpon>FormRegistrarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarMateria.resx">
+      <DependentUpon>FormRegistrarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarNotas.resx">
+      <DependentUpon>FormRegistrarNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarUsuarioAdmin.resx">
+      <DependentUpon>FormRegistrarUsuarioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ratica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
