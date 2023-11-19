@@ -22,7 +22,7 @@ namespace ProyectoTercerCorte
         public StreamReader Reader { get; set; }
         public StreamWriter Writer { get; set; }
         public string ruta_Estudiante = "datosEstudiante.txt";
-        
+
 
         public void LimpiarTxt()
         {
@@ -45,15 +45,21 @@ namespace ProyectoTercerCorte
 
         private void btnRegistrarM_Click(object sender, EventArgs e)
         {
-
-            string datosEstudiante = $"{txtNombreE.Text},{txtIdentidicacionE.Text},{DateFechaNacimiento.Text},{txtTelefonoE.Text},{txtCorreoE.Text},{comboGeneroE.Text}";
-            if(ValidarEstudiante())
+            try
             {
-                this.Writer = File.AppendText(ruta_Estudiante);
-                this.Writer.WriteLine(datosEstudiante);
-                this.Writer.Close();
-                LimpiarTxt();
-                MessageBox.Show("Registro exitoso");
+                string datosEstudiante = $"{txtNombreE.Text},{txtIdentidicacionE.Text},{DateFechaNacimiento.Text},{txtTelefonoE.Text},{txtCorreoE.Text},{comboGeneroE.Text}";
+                if (ValidarEstudiante())
+                {
+                    this.Writer = File.AppendText(ruta_Estudiante);
+                    this.Writer.WriteLine(datosEstudiante);
+                    this.Writer.Close();
+                    LimpiarTxt();
+                    MessageBox.Show("Registro exitoso");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ingrese datos para continuar");
             }
         }
 
@@ -64,14 +70,16 @@ namespace ProyectoTercerCorte
             if (File.Exists(ruta_Estudiante))
             {
                 Reader = new StreamReader(ruta_Estudiante);
-                while(!Reader.EndOfStream) 
+                while (!Reader.EndOfStream)
                 {
                     string[] tem = Reader.ReadLine().Split(',');
                     if (tem[1] == id.ToString())
                     {
                         MessageBox.Show("El id ya se encuentra registrado");
                         LimpiarTxt();
+                        Reader.Close();
                         validar = false;
+                        break;
                     }
                 }
                 Reader.Close();
@@ -79,40 +87,19 @@ namespace ProyectoTercerCorte
             return validar;
         }
 
-        private void txtIdentidicacionE_Leave(object sender, EventArgs e)
+        private void txtIdentidicacionE_Leave_1(object sender, EventArgs e)
         {
-            TextBox textBoxId = (TextBox)sender;
+            TextBox textBoxt = (TextBox)sender;
             try
             {
-                if (textBoxId.Name.Equals("txtIdentidicacionE"))
-                {
-                    long.Parse(textBoxId.Text);
-                    errorProvider1.SetError(textBoxId, "");
-                }
+                long.Parse(textBoxt.Text);
+                errorProvider1.SetError(textBoxt, "");
             }
             catch (Exception)
             {
-                errorProvider1.SetError(textBoxId, "Ingrese números, no letras");
-                textBoxId.Focus();
-            }
-
-        }
-
-        private void txtTelefonoE_Leave(object sender, EventArgs e)
-        {
-            TextBox textBoxPhone = (TextBox)sender;
-            try
-            {
-                if (textBoxPhone.Name.Equals("txtTelefonoE"))
-                {
-                    long.Parse(textBoxPhone.Text);
-                    errorProvider1.SetError(textBoxPhone, "");
-                }
-            }
-            catch (Exception)
-            {
-                errorProvider1.SetError(textBoxPhone, "Ingrese números, no letras");
-                textBoxPhone.Focus();
+                errorProvider1.SetError(textBoxt, "Ingrese números, no letras");
+                textBoxt.Focus();
+                textBoxt.Text = "0";
             }
         }
     }

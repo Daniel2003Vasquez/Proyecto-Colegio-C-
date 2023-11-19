@@ -58,6 +58,12 @@
     <Compile Include="FormComplementoVerNotasEstudiante.Designer.cs">
       <DependentUpon>FormComplementoVerNotasEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIniciarBoletin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIniciarBoletin.Designer.cs">
+      <DependentUpon>FormIniciarBoletin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="FormRegistrarUsuarioAdmin.Designer.cs">
       <DependentUpon>FormRegistrarUsuarioAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVerTodasLasNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerTodasLasNotas.Designer.cs">
+      <DependentUpon>FormVerTodasLasNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBoletin.resx">
@@ -119,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormComplementoVerNotasEstudiante.resx">
       <DependentUpon>FormComplementoVerNotasEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIniciarBoletin.resx">
+      <DependentUpon>FormIniciarBoletin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
@@ -147,20 +162,23 @@
     <EmbeddedResource Include="FormRegistrarUsuarioAdmin.resx">
       <DependentUpon>FormRegistrarUsuarioAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVerTodasLasNotas.resx">
+      <DependentUpon>FormVerTodasLasNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -171,10 +189,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ratica.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\perfil.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

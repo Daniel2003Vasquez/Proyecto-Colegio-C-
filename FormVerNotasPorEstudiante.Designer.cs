@@ -55,7 +55,7 @@
             this.txtIdentificacionVNE.Name = "txtIdentificacionVNE";
             this.txtIdentificacionVNE.Size = new System.Drawing.Size(277, 30);
             this.txtIdentificacionVNE.TabIndex = 64;
-            this.txtIdentificacionVNE.Leave += new System.EventHandler(this.txtIdentificacionVNE_Leave);
+            this.txtIdentificacionVNE.Leave += new System.EventHandler(this.txtIdentificacionVNE_Leave_1);
             // 
             // label2
             // 

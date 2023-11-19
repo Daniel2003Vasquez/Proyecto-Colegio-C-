@@ -18,3 +18,5 @@ C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCort
 C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCorte.FormVerNotasPorEstudiante.resources
 C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCorte.FormComplementoRNotas.resources
 C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCorte.FormBoletin.resources
+C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCorte.FormIniciarBoletin.resources
+C:\Users\Daniel Vasquez\Desktop\ProyectoTercerCorte\obj\Debug\ProyectoTercerCorte.FormVerTodasLasNotas.resources

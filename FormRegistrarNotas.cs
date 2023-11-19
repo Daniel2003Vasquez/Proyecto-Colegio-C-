@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
+using System.Diagnostics.Eventing.Reader;
 
 namespace ProyectoTercerCorte
 {
@@ -19,9 +20,36 @@ namespace ProyectoTercerCorte
             InitializeComponent();
         }
 
-        public long id;
+        public StreamReader Reader { get; set; }
+
         public string ruta_Estudiante = "datosEstudiante.txt";
         public string ruta_Datos_Estudiantes_Notas = "NotasDatoStudent.txt";
+        public long identificacion;
+
+        private void FormRegistrarNotas_Load(object sender, EventArgs e)
+        {
+        }
+        public bool ValidarEstudiantEntxt()
+        {
+            identificacion = long.Parse(txtIdentificacion.Text);
+            if (File.Exists(ruta_Estudiante))
+            {
+                Reader = new StreamReader(ruta_Estudiante);
+                while (!Reader.EndOfStream)
+                {
+                    string[] tempo = Reader.ReadLine().Split(',');
+                    if (tempo[1] == identificacion.ToString())
+                    {
+                        Reader.Close();
+                        return true;
+                    }
+                }
+                Reader.Close();
+            }
+            MessageBox.Show("No se encuentra registrado");
+            txtIdentificacion.Text = "";
+            return false;
+        }
 
         public bool ValidarEstudianteNota() //Para saber si ya tiene calificación
         {
@@ -49,44 +77,48 @@ namespace ProyectoTercerCorte
         {
             try
             {
-                if (ValidarEstudiante() == true)
+                if(ValidarEstudiantEntxt()) 
                 {
-                    FormComplementoRNotas formNotasLabel = new FormComplementoRNotas(id);
-                    panel1Notas.Controls.Clear();
-                    formNotasLabel.TopLevel = false;
-                    formNotasLabel.FormBorderStyle = FormBorderStyle.None;
-                    panel1Notas.Controls.Add(formNotasLabel);
-                    formNotasLabel.Dock = DockStyle.Fill;
-                    formNotasLabel.Show();
-                    txtIdNe.Text = "";
+                    if(ValidarEstudianteNota())
+                    {
+                        FormComplementoRNotas formNotasLabel = null;
+                        if(formNotasLabel == null || formNotasLabel.IsDisposed)
+                        {
+                            formNotasLabel = new FormComplementoRNotas(identificacion);
+                            if(panel1Notas.Controls.Count > 0 ) 
+                            {
+                                panel1Notas.Controls.Clear();
+                            }
+                            formNotasLabel.TopLevel = false;
+                            formNotasLabel.FormBorderStyle = FormBorderStyle.None;
+                            panel1Notas.Controls.Add(formNotasLabel);
+                            formNotasLabel.Dock = DockStyle.Fill;
+                            formNotasLabel.Show();
+                            txtIdentificacion.Text = "";
+                        }
+                    }
                 }
-            }catch
-            { 
-                MessageBox.Show("Ingrese una identificación para buscar "); 
             }
-        }
-
-        private void FormRegistrarNotas_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public bool ValidarEstudiante()
-        {
-            id = long.Parse(txtIdNe.Text);
-            string[] linea = File.ReadAllLines(ruta_Estudiante);
-            string[] aprobacion = File.ReadAllLines(ruta_Datos_Estudiantes_Notas);
-            foreach (string student in linea) //Saber si está registrado
+            catch
             {
-                if (student.Contains(id.ToString()))
-                {
-                    return true;
-                }
+                MessageBox.Show("Ingrese datos, por favor");
+                txtIdentificacion.Text = "";
             }
-            MessageBox.Show("El id no se encuentra registrado");
-            txtIdNe.Text = "";
-            return false;
         }
 
+        //private void txtIdentificacion_Leave(object sender, EventArgs e)
+        //{
+        //    //TextBox textBoxId = (TextBox)sender;
+        //    //try
+        //    //{
+        //    //    long.Parse(txtIdentificacion.Text);
+        //    //    errorProvider1.SetError(textBoxId, "");
+        //    //}
+        //    //catch
+        //    //{
+        //    //    errorProvider1.SetError(textBoxId, "Ingrese números");
+        //    //    textBoxId.Focus();
+        //    //}
+        //}
     }
 }

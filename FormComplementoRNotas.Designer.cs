@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbNota1 = new System.Windows.Forms.Label();
             this.txtNota1 = new System.Windows.Forms.TextBox();
             this.txtNota2 = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.txtNota6 = new System.Windows.Forms.TextBox();
             this.LbNota6 = new System.Windows.Forms.Label();
             this.btnRegistrarNE = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNota1
@@ -59,6 +62,8 @@
             this.txtNota1.Name = "txtNota1";
             this.txtNota1.Size = new System.Drawing.Size(110, 30);
             this.txtNota1.TabIndex = 1;
+            this.txtNota1.TextChanged += new System.EventHandler(this.txtNota1_TextChanged);
+            this.txtNota1.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // txtNota2
             // 
@@ -67,6 +72,7 @@
             this.txtNota2.Name = "txtNota2";
             this.txtNota2.Size = new System.Drawing.Size(110, 30);
             this.txtNota2.TabIndex = 2;
+            this.txtNota2.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // LbNota2
             // 
@@ -84,6 +90,7 @@
             this.txtNota3.Name = "txtNota3";
             this.txtNota3.Size = new System.Drawing.Size(110, 30);
             this.txtNota3.TabIndex = 3;
+            this.txtNota3.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // LbNota3
             // 
@@ -101,6 +108,7 @@
             this.txtNota4.Name = "txtNota4";
             this.txtNota4.Size = new System.Drawing.Size(110, 30);
             this.txtNota4.TabIndex = 4;
+            this.txtNota4.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // LbNota4
             // 
@@ -118,6 +126,7 @@
             this.txtNota5.Name = "txtNota5";
             this.txtNota5.Size = new System.Drawing.Size(110, 30);
             this.txtNota5.TabIndex = 5;
+            this.txtNota5.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // LbNota5
             // 
@@ -135,6 +144,7 @@
             this.txtNota6.Name = "txtNota6";
             this.txtNota6.Size = new System.Drawing.Size(110, 30);
             this.txtNota6.TabIndex = 6;
+            this.txtNota6.Leave += new System.EventHandler(this.txtNota1_Leave);
             // 
             // LbNota6
             // 
@@ -155,7 +165,11 @@
             this.btnRegistrarNE.UseVisualStyleBackColor = true;
             this.btnRegistrarNE.Click += new System.EventHandler(this.btnRegistrarNE_Click);
             // 
-            // FormNotasLabel
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // FormComplementoRNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,9 +187,10 @@
             this.Controls.Add(this.LbNota2);
             this.Controls.Add(this.txtNota1);
             this.Controls.Add(this.lbNota1);
-            this.Name = "FormNotasLabel";
+            this.Name = "FormComplementoRNotas";
             this.Text = "FormNotasLabel";
             this.Load += new System.EventHandler(this.FormNotasLabel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +211,6 @@
         private System.Windows.Forms.TextBox txtNota6;
         private System.Windows.Forms.Label LbNota6;
         private System.Windows.Forms.Button btnRegistrarNE;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

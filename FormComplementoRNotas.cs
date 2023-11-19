@@ -68,12 +68,60 @@ namespace ProyectoTercerCorte
                 this.Writer.WriteLine(datosNotas);
                 this.Writer.Close();
                 LimpiartxtNotasE();
-                MessageBox.Show("Registro exitoso" +
-                    $"Su promedio es de: {definitiva}");
+                MessageBox.Show("Registro exitoso\n" + $"Su promedio es de: {definitiva}");
             }
             catch
             {
                 MessageBox.Show("Error al guardar el archivo");
+            }
+        }
+
+        private void txtNota1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtNota1_Leave(object sender, EventArgs e)
+        {
+            TextBox textBoxNota = (TextBox)sender;
+            try
+            {
+                if (textBoxNota.Name.Equals("txtNota1"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+                if (textBoxNota.Name.Equals("txtNota2"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+                if (textBoxNota.Name.Equals("txtNota3"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+                if (textBoxNota.Name.Equals("txtNota4"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+                if (textBoxNota.Name.Equals("txtNota5"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+                if (textBoxNota.Name.Equals("txtNota6"))
+                {
+                    long.Parse(textBoxNota.Text);
+                    errorProvider1.SetError(textBoxNota, "");
+                }
+
+            }
+            catch
+            {
+                errorProvider1.SetError(textBoxNota, "Ingrese números");
+                textBoxNota.Focus();
             }
         }
     }

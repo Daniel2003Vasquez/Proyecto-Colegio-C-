@@ -19,9 +19,11 @@ namespace ProyectoTercerCorte
             InitializeComponent();
             Num_cedula = cedula;
         }
+        
         public string ruta = "datosMaterias.txt";
         public string ruta_Estudiantes_Con_Notas = "NotasDatoStudent.txt";
         public string ruta_Datos_Estudiante = "datosEstudiante.txt";
+        
         private void FormComplementoVerNotasEstudiante_Load(object sender, EventArgs e)
         {
             MostrarDatosMateriaEnLabel();
@@ -35,7 +37,7 @@ namespace ProyectoTercerCorte
             {
                 string[] lineas = File.ReadAllLines(ruta);
 
-                Label[] nombreMaterias = { LbNota1, LbNota2, LbNota3, LbNota4, LbNota5, LbNota6 };
+                Label[] nombreMaterias = {LbNota1, LbNota2, LbNota3, LbNota4, LbNota5, LbNota6 };
 
                 for (int i = 0; i < lineas.Length && i < nombreMaterias.Length; i++)
                 {

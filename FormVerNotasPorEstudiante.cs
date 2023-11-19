@@ -51,8 +51,12 @@ namespace ProyectoTercerCorte
                 if (ExistStudent() == validar)
                 {
                     txtIdentificacionVNE.Text = "";
-                    FormComplementoVerNotasEstudiante formComplementoVerNotasEstudiante = new FormComplementoVerNotasEstudiante(id);
-                    formComplementoVerNotasEstudiante.ShowDialog();
+                    FormComplementoVerNotasEstudiante formComplementoVerNotasEstudiante = null;
+                    if(formComplementoVerNotasEstudiante == null || formComplementoVerNotasEstudiante.IsDisposed) 
+                    {
+                        formComplementoVerNotasEstudiante = new FormComplementoVerNotasEstudiante(id);
+                        formComplementoVerNotasEstudiante.ShowDialog();
+                    }
                 }
             }
             catch
@@ -61,21 +65,19 @@ namespace ProyectoTercerCorte
             }
         }
 
-        private void txtIdentificacionVNE_Leave(object sender, EventArgs e)
+        private void txtIdentificacionVNE_Leave_1(object sender, EventArgs e)
         {
             TextBox textBoxIdentificacion = (TextBox)sender;
             try
             {
-                if (textBoxIdentificacion.Name.Equals("txtIdentificacionVNE"))
-                {
-                    long.Parse(textBoxIdentificacion.Text);
-                    errorProvider1.SetError(textBoxIdentificacion, "");
-                }
+                long.Parse(textBoxIdentificacion.Text);
+                errorProvider1.SetError(textBoxIdentificacion, "");
             }
             catch
             {
-                errorProvider1.SetError(textBoxIdentificacion, "Ingrese números, no letas");
                 textBoxIdentificacion.Focus();
+                errorProvider1.SetError(textBoxIdentificacion, "Ingrese números");
+                txtIdentificacionVNE.Text = "0";
             }
         }
     }

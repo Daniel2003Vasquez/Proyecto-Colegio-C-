@@ -76,7 +76,7 @@
             this.txtIdentidicacionE.Name = "txtIdentidicacionE";
             this.txtIdentidicacionE.Size = new System.Drawing.Size(309, 30);
             this.txtIdentidicacionE.TabIndex = 2;
-            this.txtIdentidicacionE.Leave += new System.EventHandler(this.txtIdentidicacionE_Leave);
+            this.txtIdentidicacionE.Leave += new System.EventHandler(this.txtIdentidicacionE_Leave_1);
             // 
             // label2
             // 
@@ -123,7 +123,7 @@
             this.txtTelefonoE.Name = "txtTelefonoE";
             this.txtTelefonoE.Size = new System.Drawing.Size(309, 30);
             this.txtTelefonoE.TabIndex = 4;
-            this.txtTelefonoE.Leave += new System.EventHandler(this.txtTelefonoE_Leave);
+            this.txtTelefonoE.Leave += new System.EventHandler(this.txtIdentidicacionE_Leave_1);
             // 
             // label3
             // 

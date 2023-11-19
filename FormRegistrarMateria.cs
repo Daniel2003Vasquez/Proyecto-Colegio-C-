@@ -66,8 +66,7 @@ namespace ProyectoTercerCorte
                             return;
                         }
                     }
-                    
-                        Reader.Close();
+                    Reader.Close();
                     if (contador >= 6)
                     {
                         MessageBox.Show("Solo se pueden registrar 6 materias\nSon humanos, no robots. Entiende");

@@ -28,20 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRegistrarNota = new System.Windows.Forms.Button();
             this.btnRegistrarMateria = new System.Windows.Forms.Button();
+            this.btnPerfil = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.panelVisor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPerfil = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnRegistrarNota);
             this.panel1.Controls.Add(this.btnRegistrarMateria);
@@ -54,6 +59,22 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(3, 439);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 61);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Boletin";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -62,7 +83,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(3, 311);
+            this.button1.Location = new System.Drawing.Point(3, 303);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 61);
             this.button1.TabIndex = 4;
@@ -78,7 +99,7 @@
             this.btnRegistrarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarNota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(3, 241);
+            this.btnRegistrarNota.Location = new System.Drawing.Point(3, 235);
             this.btnRegistrarNota.Name = "btnRegistrarNota";
             this.btnRegistrarNota.Size = new System.Drawing.Size(165, 61);
             this.btnRegistrarNota.TabIndex = 3;
@@ -94,13 +115,30 @@
             this.btnRegistrarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarMateria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegistrarMateria.Location = new System.Drawing.Point(3, 171);
+            this.btnRegistrarMateria.Location = new System.Drawing.Point(3, 167);
             this.btnRegistrarMateria.Name = "btnRegistrarMateria";
             this.btnRegistrarMateria.Size = new System.Drawing.Size(165, 61);
             this.btnRegistrarMateria.TabIndex = 2;
             this.btnRegistrarMateria.Text = "Registrar Materia";
             this.btnRegistrarMateria.UseVisualStyleBackColor = true;
             this.btnRegistrarMateria.Click += new System.EventHandler(this.btnRegistrarMateria_Click);
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.FlatAppearance.BorderSize = 0;
+            this.btnPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPerfil.Location = new System.Drawing.Point(3, 31);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(165, 61);
+            this.btnPerfil.TabIndex = 1;
+            this.btnPerfil.Text = "Perfil";
+            this.btnPerfil.UseVisualStyleBackColor = true;
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // btnRegistrar
             // 
@@ -110,7 +148,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegistrar.Location = new System.Drawing.Point(3, 101);
+            this.btnRegistrar.Location = new System.Drawing.Point(3, 99);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(165, 61);
             this.btnRegistrar.TabIndex = 0;
@@ -133,23 +171,21 @@
             this.panel2.Size = new System.Drawing.Size(920, 36);
             this.panel2.TabIndex = 52;
             // 
-            // btnPerfil
+            // button3
             // 
-            this.btnPerfil.FlatAppearance.BorderSize = 0;
-            this.btnPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPerfil.Image = global::ProyectoTercerCorte.Properties.Resources.perfil;
-            this.btnPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfil.Location = new System.Drawing.Point(3, 31);
-            this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(165, 61);
-            this.btnPerfil.TabIndex = 1;
-            this.btnPerfil.Text = "Perfil";
-            this.btnPerfil.UseVisualStyleBackColor = true;
-            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Location = new System.Drawing.Point(3, 371);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(165, 61);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Ver Todas Notas";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormInicio
             // 
@@ -160,6 +196,7 @@
             this.Controls.Add(this.panelVisor);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormInicio";
@@ -181,5 +218,7 @@
         private System.Windows.Forms.Button btnRegistrarNota;
         private System.Windows.Forms.Button btnRegistrarMateria;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
